@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="../bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/Login.css">
     <script type="text/javascript" src="../jquery/jquery.min.js"></script>
     <script type="text/javascript" src="../bootstrap-4/js/bootstrap.min.js"></script>
@@ -13,29 +14,8 @@
 
 <body class="container-fluid p-0">
     <!-- 导航栏 -->
-    <nav class="navbar navbar-dark bg-dark">
-        <a href="#" class="navbar-brand">
-            <img id="brand-img" src="../image/天猫.png">
-            <span class="pt-2 pl-2">猫咖</span>
-        </a>
-        <ul class="nav">
-            <li class="nav-item">
-                <a href="#" class="nav-link text-secondary">首页</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-secondary">社区</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-secondary">服务</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-secondary">商城</a>
-            </li>
-            <li class="nav-item active">
-                <a href="#" class="nav-link text-light disabled">登录</a>
-            </li>
-        </ul>
-    </nav>
+    <div id="header"></div>
+    <script type="text/javascript">$("#header").load("header.html");</script>
     <!-- 内容部分 -->
     <div class="container-fluid" id="content">
         <div class="row">

@@ -10,23 +10,39 @@
     </parent>
 
     <groupId>com.example</groupId>
-    <artifactId>maoka_server-6001</artifactId>
+    <artifactId>maoka_login_controller-7001</artifactId>
     <version>1.0</version>
-    <name>maoka_server-6001</name>
+    <name>maoka_login_controller-7001</name>
     <description>Demo project for Spring Boot</description>
 
+
     <dependencies>
-        <!-- api-->
+        <!-- webutils -->
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>maoka_api</artifactId>
+            <artifactId>maoka_webutil</artifactId>
         </dependency>
-        <!-- eureka-server  -->
+        <!-- devtools -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <!--  test  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
+
 
     <build>
         <plugins>

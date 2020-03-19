@@ -18,3 +18,11 @@
 	width: 25px;
 	height: 25px;
 }
+.prompt-text{
+	height: 1em;
+}
+#login-prompt{
+	position: absolute;
+	left: 10%;
+	top:2%;
+}

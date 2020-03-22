@@ -44,7 +44,7 @@ public class JwtUtil {
         //创建一个验证器，验证token的准确性
         JWTVerifier verifier = JWT.require(alg)//表明使用的算法
                 .withIssuer("skye")//指定签发作者名
-                .withAudience("com.example")//指定企业名
+                .withAudience("org.example")//指定企业名
                 .build();
         try {
             verifier.verify(token);//验证token是否正确
@@ -57,7 +57,7 @@ public class JwtUtil {
         result.put("issuer", decode.getIssuer());//签发用户名放入Map
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        result.put("date", dateFormat.format(decode.getIssuedAt()));//签发时间放入Map
+        result.put("date", dateFormat.format(decode.getExpiresAt()));//签发时间放入Map
 
         result.put("id", decode.getClaim("id"));//用户信息放入Map
         result.put("account", decode.getClaim("account"));

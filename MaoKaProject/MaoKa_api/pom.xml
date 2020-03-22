@@ -14,5 +14,11 @@
     <artifactId>maoka_api</artifactId>
     <version>1.0</version>
 
-
+    <dependencies>
+        <!--fastjson-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+    </dependencies>
 </project>

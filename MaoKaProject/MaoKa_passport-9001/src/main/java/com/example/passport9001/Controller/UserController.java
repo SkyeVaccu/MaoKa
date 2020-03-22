@@ -2,8 +2,7 @@ package com.example.passport9001.Controller;
 
 import Entity.User;
 import com.example.passport9001.Util.JwtUtil;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +11,7 @@ import java.util.Map;
 public class UserController {
 
     @PostMapping("/issueToken")
-    public String issueToken(User user) {
+    public String issueToken(@RequestBody User user) {
         Map<String, Object> param = new HashMap<>();
         param.put("id", user.getId());
         param.put("account", user.getAccount());

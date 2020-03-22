@@ -15,22 +15,22 @@ public class UserService implements IUserService {
 
     @Override
     public boolean isExistByUser(User user) {
-        return userMapper.isExist(user);
+        return userMapper.isExistByUser(user);
     }
 
     @Override
     public boolean isExistById(int id) {
-        return userMapper.isExist(id);
+        return userMapper.isExistById(id);
     }
 
     @Override
     public boolean isExistByAccount(String account) {
-        return userMapper.isExist(account);
+        return userMapper.isExistByAccount(account);
     }
 
     @Override
     public boolean addUser(User user) {
-        if(userMapper.isExist(user.getAccount()))
+        if(userMapper.isExistByAccount(user.getAccount()))
             return false;
         else
             return userMapper.insertUser(user);
@@ -38,28 +38,28 @@ public class UserService implements IUserService {
 
     @Override
     public User getUserById(int id) {
-        if(userMapper.isExist(id))
-            return userMapper.selectUser(id);
+        if(userMapper.isExistById(id))
+            return userMapper.selectUserById(id);
         return null;
     }
 
     @Override
     public User getUserByAccount(String account) {
-        if(userMapper.isExist(account))
-            return userMapper.selectUser(account);
+        if(userMapper.isExistByAccount(account))
+            return userMapper.selectUserByAccount(account);
         return null;
     }
 
     @Override
     public boolean updateUser(User user) {
-        if(userMapper.isExist(user.getId()))
+        if(userMapper.isExistById(user.getId()))
             return userMapper.updateUser(user);
         return false;
     }
 
     @Override
     public boolean deleteUserById(int id) {
-        if(userMapper.isExist(id))
+        if(userMapper.isExistById(id))
             return userMapper.deleteUser(id);
         return false;
     }

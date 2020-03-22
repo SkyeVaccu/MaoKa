@@ -3,7 +3,10 @@ package MyWebConfiguration;
 import Utils.CookieUtil;
 import Utils.LoginAccess;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.method.HandlerMethod;
@@ -11,6 +14,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
 import java.util.Map;
 
 @Component
@@ -52,7 +56,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         //token存在
         else{
             //解析Token
-            Map<String,Object> map = restTemplate.postForObject("wwww.maoka.com:9001/parseToken", token, Map.class);
+            Map<String,Object> map = restTemplate.postForObject("http://www.maoka.com:9001/parseToken?token={token}",null, Map.class,token);
             //获得解析结果
             boolean result = (boolean) map.get("result");
             if(result)//解析成功

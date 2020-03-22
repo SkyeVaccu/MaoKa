@@ -3,28 +3,27 @@ package com.example.user_provider8001.Dao;
 import Entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
 public interface UserMapper {
     /**
      * 通过user的账号和密码判断用户是否存在
      * @param user 传进来的用户
      * @return 结果
      */
-    public boolean isExist(User user);
+    public boolean isExistByUser(User user);
 
     /**
      * 根据id判断用户是否存在
      * @param id 用户id
      * @return 结果
      */
-    public boolean isExist(int id);
+    public boolean isExistById(int id);
 
     /**
      * 根据account判断用户是否存在
      * @param account 用户账号
      * @return 结果
      */
-    public boolean isExist(String account);
+    public boolean isExistByAccount(String account);
 
     /**
      * 新增一个用户
@@ -38,14 +37,14 @@ public interface UserMapper {
      * @param id 用户的id
      * @return 结果
      */
-    public User selectUser(int id);
+    public User selectUserById(int id);
 
     /**
      * 根据用户的账号获得用户
      * @param account 用户的账号
      * @return 结果
      */
-    public User selectUser(String account);
+    public User selectUserByAccount(String account);
 
     /**
      * 更新用户的信息

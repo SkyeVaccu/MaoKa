@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.*;
 @Component
 public interface LoginFeign{
 
-    @RequestMapping(value = "login",method = RequestMethod.PUT)
+    @RequestMapping(value = "login",method = RequestMethod.GET)
     public boolean login(@RequestBody User user);
 }

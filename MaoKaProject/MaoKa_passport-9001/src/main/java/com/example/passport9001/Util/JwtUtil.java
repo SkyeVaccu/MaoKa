@@ -29,6 +29,8 @@ public class JwtUtil {
                 .withExpiresAt(new Date(currentTime.getTime() + 24 * 3600 * 1000L))//指定签发时间
                 .withClaim("id", (int) param.get("id"))//增加用户的信息
                 .withClaim("account", (String) param.get("account"))
+                .withClaim("username",(String)param.get("username"))
+                .withClaim("image",(String)param.get("image"))
                 .sign(alg);//指定算法
         return token;
     }
@@ -52,6 +54,7 @@ public class JwtUtil {
         } catch (Exception e) {
             e.printStackTrace();
             result.put("result", false);//失败结果放入Map
+            return result;
         }
         DecodedJWT decode = JWT.decode(token);//使用JWT对token解析解析
         result.put("issuer", decode.getIssuer());//签发用户名放入Map
@@ -59,8 +62,10 @@ public class JwtUtil {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         result.put("date", dateFormat.format(decode.getExpiresAt()));//签发时间放入Map
 
-        result.put("id", decode.getClaim("id"));//用户信息放入Map
-        result.put("account", decode.getClaim("account"));
+        result.put("id", decode.getClaim("id").asInt());//用户信息放入Map
+        result.put("account", decode.getClaim("account").asString());
+        result.put("username",decode.getClaim("username").asString());
+        result.put("image",decode.getClaim("image").asString());
         return result;
     }
 }

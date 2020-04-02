@@ -15,6 +15,16 @@ public class LoginHystrix implements FallbackFactory<LoginFeign> {
             public boolean login(User user) {
                 return false;
             }
+
+            @Override
+            public User getUserByAccount(String account, int loginType) {
+                return null;
+            }
+
+            @Override
+            public String register(User user) {
+                return null;
+            }
         };
     }
 }

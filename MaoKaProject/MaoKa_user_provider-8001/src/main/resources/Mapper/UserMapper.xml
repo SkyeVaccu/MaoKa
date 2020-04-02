@@ -4,31 +4,31 @@
 <mapper namespace="com.example.user_provider8001.Dao.UserMapper">
 
     <select id="isExistByUser" resultType="boolean" parameterType="Entity.User">
-        select count(*) from users where account = #{account} and password =#{password}
+        select count(*) from users where account = #{account} and password =#{password} and login_type=#{loginType}
     </select>
 
-    <select id="isExistById" resultType="boolean" parameterType="java.lang.Integer">
+    <select id="isExistById" resultType="boolean">
         select count(*) from users where id = #{id}
     </select>
 
-    <select id="isExistByAccount" resultType="boolean" parameterType="java.lang.String">
-        select count(*) from users where account = #{account}
+    <select id="isExistByAccount" resultType="boolean">
+        select count(*) from users where account = #{account} and login_type=#{loginType}
     </select>
 
     <insert id="insertUser" useGeneratedKeys="true">
-        insert into users (account,password,username,email,phonenumber,image) values (#{account},#{password},#{username},#{email},#{phonenumber},#{image})
+        insert into users (account,password,username,email,phonenumber,image,login_type) values (#{account},#{password},#{username},#{email},#{phonenumber},#{image},#{loginType})
     </insert>
 
     <select id="selectUserById" resultType="Entity.User" parameterType="java.lang.Integer">
         select * from users where id = #{id}
     </select>
 
-    <select id="selectUserByAccount" resultType="Entity.User" parameterType="java.lang.String">
-        select * from users where account = #{account}
+    <select id="selectUserByAccount" resultType="Entity.User">
+        select * from users where account = #{account} and login_type=#{loginType}
     </select>
 
     <update id="updateUser">
-        update users set account = #{account},password = #{password},username = #{username},email = #{email},phonenumber = #{phonenumber},image = #{image}
+        update users set account = #{account},password = #{password},username = #{username},email = #{email},phonenumber = #{phonenumber},image = #{image} where login_type=#{loginType}
     </update>
 
     <delete id="deleteUser">

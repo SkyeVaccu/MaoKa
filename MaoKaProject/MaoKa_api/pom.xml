@@ -8,6 +8,7 @@
         <groupId>org.example</groupId>
         <artifactId>maoka_parent</artifactId>
         <version>1.0</version>
+        <relativePath>../MaoKa_parent/pom.xml</relativePath>
     </parent>
 
     <groupId>org.example</groupId>

@@ -47,6 +47,12 @@
                 <artifactId>fastjson</artifactId>
                 <version>1.2.62</version>
             </dependency>
+            <!--  fastdfs版本  -->
+            <dependency>
+                <groupId>org.csource</groupId>
+                <artifactId>fastdfs-client-java</artifactId>
+                <version>1.29-SNAPSHOT</version>
+            </dependency>
             <!-- serviceutil版本 -->
             <dependency>
                 <groupId>org.example</groupId>

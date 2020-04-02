@@ -8,12 +8,12 @@ public class User {
     private String email;
     private int phonenumber;
     private String image;
-
+    private int loginType;
     public User() {
     }
 
     //获取的时候使用
-    public User(int id, String account, String password, String username, String email, int phonenumber, String image) {
+    public User(int id, String account, String password, String username, String email, int phonenumber, String image, int loginType) {
         this.id = id;
         this.account = account;
         this.password = password;
@@ -21,16 +21,19 @@ public class User {
         this.email = email;
         this.phonenumber = phonenumber;
         this.image = image;
+        this.loginType = loginType;
     }
 
+
     //添加的时候使用，因为当时没有id
-    public User(String account, String password, String username, String email, int phonenumber, String image) {
+    public User(String account, String password, String username, String email, int phonenumber, String image, int loginType) {
         this.account = account;
         this.password = password;
         this.username = username;
         this.email = email;
         this.phonenumber = phonenumber;
         this.image = image;
+        this.loginType = loginType;
     }
 
     public int getId() {
@@ -89,6 +92,14 @@ public class User {
         this.image = image;
     }
 
+    public int getLoginType() {
+        return loginType;
+    }
+
+    public void setLoginType(int loginType) {
+        this.loginType = loginType;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -99,6 +110,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", phonenumber=" + phonenumber +
                 ", image='" + image + '\'' +
+                ", loginType=" + loginType +
                 '}';
     }
 }

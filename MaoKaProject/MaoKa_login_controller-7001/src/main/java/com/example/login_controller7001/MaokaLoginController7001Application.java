@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients(basePackages = {"com.example.login_controller7001.Feign"})
-@ComponentScan({"com.example.login_controller7001","MyWebConfiguration"})
+@ComponentScan({"com.example.login_controller7001","MyWebConfiguration","AdditionalBean","Utils"})
 public class MaokaLoginController7001Application {
 
     public static void main(String[] args) {

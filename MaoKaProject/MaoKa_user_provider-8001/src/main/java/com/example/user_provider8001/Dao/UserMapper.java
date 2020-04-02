@@ -1,7 +1,9 @@
 package com.example.user_provider8001.Dao;
 
 import Entity.User;
+import org.apache.ibatis.annotations.MapKey;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
     /**
@@ -23,7 +25,7 @@ public interface UserMapper {
      * @param account 用户账号
      * @return 结果
      */
-    public boolean isExistByAccount(String account);
+    public boolean isExistByAccount(@Param("account") String account,@Param("loginType") int loginType);
 
     /**
      * 新增一个用户
@@ -44,7 +46,7 @@ public interface UserMapper {
      * @param account 用户的账号
      * @return 结果
      */
-    public User selectUserByAccount(String account);
+    public User selectUserByAccount(@Param("account") String account,@Param("loginType") int loginType);
 
     /**
      * 更新用户的信息

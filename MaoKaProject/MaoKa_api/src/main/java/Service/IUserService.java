@@ -22,7 +22,7 @@ public interface IUserService {
      * @param account 用户账号
      * @return 结果
      */
-    public boolean isExistByAccount(String account);
+    public boolean isExistByAccount(String account,int loginType);
 
     /**
      * 新增一个用户
@@ -43,7 +43,7 @@ public interface IUserService {
      * @param account 用户的账号
      * @return 结果
      */
-    public User getUserByAccount(String account);
+    public User getUserByAccount(String account,int loginType);
 
     /**
      * 更新用户的信息

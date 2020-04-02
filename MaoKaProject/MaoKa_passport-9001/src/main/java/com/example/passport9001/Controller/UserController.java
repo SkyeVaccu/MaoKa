@@ -10,14 +10,18 @@ import java.util.Map;
 @RestController
 public class UserController {
 
+    @CrossOrigin
     @PostMapping("/issueToken")
     public String issueToken(@RequestBody User user) {
         Map<String, Object> param = new HashMap<>();
         param.put("id", user.getId());
         param.put("account", user.getAccount());
+        param.put("username",user.getUsername());
+        param.put("image",user.getImage());
         return JwtUtil.encode(param);
     }
 
+    @CrossOrigin
     @PostMapping("/parseToken")
     public Map<String, Object> parseToken(String token) {
         return JwtUtil.decode(token);

@@ -4,22 +4,32 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="Shortcut Icon" href="../image/天猫.png" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="../bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../wow/animate.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/Index.css">
     <script type="text/javascript" src="../jquery/jquery.min.js"></script>
     <script type="text/javascript" src="../bootstrap-4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../wow/wow.js"></script>
+    <script type="text/javascript" src="../jquery-cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/util.js"></script>
+    <script>
+        new WOW().init();
+    </script>
     <title>Maoka登录</title>
 </head>
 
 <body class="container-fluid p-0">
 	<div id="header"></div>
-    <script type="text/javascript">$("#header").load("header.html");</script>
+    <script type="text/javascript">
+       $.addFragment("header.html","#header");
+    </script>
     <!-- 内容部分1 --> 
     <div class="container-fluid p-0">
     	<a href="#" class="text-decoration-none">
     		<div class="jumpbotron-fluid content" style="background-image: url('../image/jumpbotron.jpg');">
-				<div class="row justify-content-center m-0">
+				<div class="row justify-content-center m-0 wow fadeInUpBig" data-wow-duration="1.2s">
 					<div id="jumpbotron-text">
 						<h4 class="display-4 text-center font-weight-bolder" style="color:#000000;">
 							<span class="pr-2">猫</span><span>咖</span>
@@ -37,7 +47,7 @@
     <div class="container-fluid p-0">
     	<a href="#" class="text-decoration-none">
     		<div class="jumpbotron-fluid content" style="background-image: url('../image/jumpbotron2.jpg');">
-				<div class="row justify-content-end m-0">
+				<div class="row justify-content-end m-0 wow fadeInRight" data-wow-duration="1.2s">
 					<div id="jumpbotron2-text">
 						<h4 class="display-4 text-center font-weight-bolder text-light">
 							<span class="pr-2">猫</span><span>咖</span>
@@ -52,6 +62,7 @@
     	</a>
     </div>
 </body>
+<script type="text/javascript" src="../js/load.js"></script>
+<script type="text/javascript" src="../js/header.js"></script>
 <script type="text/javascript" src="../js/Index.js"></script>
-<script type="text/javascript" src="../js/jump.js"></script>
 </html>

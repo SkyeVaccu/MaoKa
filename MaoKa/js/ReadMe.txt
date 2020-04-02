@@ -1,0 +1,9 @@
+header.js
+	主要完成上方navbar样式的设置，以及其中用户信息的填入
+load.js
+	是完成每个页面加载的时候，发送解析token，将用户信息放入cookie
+util.js
+	相关的工具函数：
+	getUrlParam：获得Url中的参数
+	addFragment：片段插入
+	removeAllCookie：所有cookie的删除

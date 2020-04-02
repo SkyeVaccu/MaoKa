@@ -12,7 +12,7 @@
 	width:100vw;
 }
 #login_form{
-	margin-top: 10vh;
+	margin-top: 8vh;
 }
 .myicon{
 	width: 25px;
@@ -25,4 +25,12 @@
 	position: absolute;
 	left: 10%;
 	top:2%;
+}
+.prompt-text>small{
+	float: right;
+}
+#touxiang_preview{
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
 }
